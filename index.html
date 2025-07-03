@@ -1,0 +1,443 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8"/>
+    <link rel="icon" type="image/svg+xml" href="/vite.svg"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <link href="/src/style.css" rel="stylesheet">
+    <title>Safar | سفر</title>
+</head>
+
+<div class="hidden">
+    <svg>
+
+        <!-- moon -->
+        <symbol id="dark-moon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round"
+                  d="M21.752 15.002A9.72 9.72 0 0 1 18 15.75c-5.385 0-9.75-4.365-9.75-9.75 0-1.33.266-2.597.748-3.752A9.753 9.753 0 0 0 3 11.25C3 16.635 7.365 21 12.75 21a9.753 9.753 0 0 0 9.002-5.998Z"/>
+        </symbol>
+
+        <!-- Sun -->
+
+        <symbol id="light-sun" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round"
+                  d="M12 3v2.25m6.364.386-1.591 1.591M21 12h-2.25m-.386 6.364-1.591-1.591M12 18.75V21m-4.773-4.227-1.591 1.591M5.25 12H3m4.227-4.773L5.636 5.636M15.75 12a3.75 3.75 0 1 1-7.5 0 3.75 3.75 0 0 1 7.5 0Z"/>
+        </symbol>
+
+        <!-- user -->
+        <symbol id="user-login" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+             stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round"
+                  d="M15.75 6a3.75 3.75 0 1 1-7.5 0 3.75 3.75 0 0 1 7.5 0ZM4.501 20.118a7.5 7.5 0 0 1 14.998 0A17.933 17.933 0 0 1 12 21.75c-2.676 0-5.216-.584-7.499-1.632Z"/>
+        </symbol>
+
+        <!-- taxi -->
+        <symbol id="taxi" class="w-[30px] h-[30px] fill-[#ffffff]" viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg">
+            <path d="M192 0c-17.7 0-32 14.3-32 32V64c0 .1 0 .1 0 .2c-38.6 2.2-72.3 27.3-85.2 64.1L39.6 228.8C16.4 238.4 0 261.3 0 288V432v48c0 17.7 14.3 32 32 32H64c17.7 0 32-14.3 32-32V432H416v48c0 17.7 14.3 32 32 32h32c17.7 0 32-14.3 32-32V432 288c0-26.7-16.4-49.6-39.6-59.2L437.2 128.3c-12.9-36.8-46.6-62-85.2-64.1c0-.1 0-.1 0-.2V32c0-17.7-14.3-32-32-32H192zM165.4 128H346.6c13.6 0 25.7 8.6 30.2 21.4L402.9 224H109.1l26.1-74.6c4.5-12.8 16.6-21.4 30.2-21.4zM96 288a32 32 0 1 1 0 64 32 32 0 1 1 0-64zm288 32a32 32 0 1 1 64 0 32 32 0 1 1 -64 0z"></path>
+        </symbol>
+    </svg>
+
+</div>
+
+<body class="bg-white text-gray-800 dark:bg-slate-900 dark:text-gray-200">
+
+
+<!-- Header -->
+<header class="sticky top-0 z-50 bg-white/80 backdrop-blur-sm dark:bg-slate-900/80 shadow-sm">
+    <div class="container mx-auto px-4 py-3 flex justify-between items-center">
+        <div class="flex items-center space-x-2">
+            <div class="bg-primary w-10 h-10 rounded-lg flex items-center justify-center">
+                <svg class="text-white">
+                    <use xlink:href="#taxi" />
+                </svg>
+            </div>
+            <h1 class="text-2xl font-bold text-slate-800 dark:text-white">سفر</h1>
+        </div>
+
+        <nav class="hidden md:flex space-x-8">
+            <a href="#" class="font-medium hover:text-primary dark:hover:text-primary-dark">درخواست راننده</a>
+            <a href="#" class="font-medium hover:text-primary dark:hover:text-primary-dark">درخواست راننده موتور</a>
+            <a href="#" class="font-medium hover:text-primary dark:hover:text-primary-dark">ثبت نام راننده</a>
+            <a href="#" class="font-medium hover:text-primary dark:hover:text-primary-dark">چرا سفر؟</a>
+            <a href="#" class="font-medium hover:text-primary dark:hover:text-primary-dark">تماس با ما</a>
+        </nav>
+
+        <div class="flex items-center space-x-4">
+            <a class="bg-primary hover:bg-[#06d4a4] text-white font-medium py-2 px-6 rounded-full transition">
+                ثبت نام
+            </a>
+            <button class="md:hidden">
+                <i class="fas fa-bars text-xl"></i>
+            </button>
+        </div>
+    </div>
+</header>
+
+<!-- Hero Section -->
+<section class="hero-pattern py-16">
+    <div class="container mx-auto px-4 flex flex-col md:flex-row items-center">
+        <div class="md:w-1/2 mb-12 md:mb-0">
+            <div class="max-w-md">
+                <h2 class="text-4xl md:text-5xl font-bold text-slate-800 dark:text-white mb-4">
+                    در <span class="text-primary dark:text-primary-dark">سفر</span>، درآمد خود را افزایش دهید
+                </h2>
+                <p class="text-lg text-gray-600 dark:text-gray-300 mb-8">
+                    به خانواده رانندگان سفر بپیوندید و با امنیت و آرامش بیشتر در شهرهای افغانستان درآمد کسب کنید.
+                </p>
+                <div class="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-4">
+                    <button class="bg-primary hover:bg-[#06d4a4] text-white font-medium py-3 px-8 rounded-full text-lg transition flex items-center justify-center">
+                        ثبت نام راننده
+                        <i class="fas fa-arrow-left mr-2"></i>
+                    </button>
+                    <button class="border-2 border-primary text-primary dark:text-primary-dark dark:border-primary-dark font-medium py-3 px-8 rounded-full text-lg transition flex items-center justify-center">
+                        اطلاعات بیشتر
+                        <i class="fas fa-info-circle mr-2"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <div class="md:w-1/2 flex justify-center">
+            <div class="relative">
+                <div class="w-80 h-80 rounded-full bg-primary/10 dark:bg-primary-dark/10 flex items-center justify-center">
+                    <div class="w-64 h-64 rounded-full bg-primary/20 dark:bg-primary-dark/20 flex items-center justify-center">
+                        <img src="https://images.unsplash.com/photo-1568605117036-5fe5e7bab0b7?auto=format&fit=crop&q=80&w=800"
+                             alt="Taxi Driver"
+                             class="w-48 h-48 rounded-full object-cover border-4 border-white dark:border-slate-800 shadow-lg">
+                    </div>
+                </div>
+                <div class="absolute -bottom-4 left-0 bg-white dark:bg-slate-800 rounded-xl shadow-lg p-4 w-64">
+                    <div class="flex items-center">
+                        <div class="bg-primary/10 dark:bg-primary-dark/10 text-primary dark:text-primary-dark rounded-lg p-2 mr-3">
+                            <i class="fas fa-wallet text-xl"></i>
+                        </div>
+                        <div>
+                            <p class="font-medium">درآمد ماهانه</p>
+                            <p class="text-xl font-bold">25,000 افغانی+</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Stats Section -->
+<section class="py-12 bg-slate-50 dark:bg-slate-800/50">
+    <div class="container mx-auto px-4">
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
+            <div class="stats-card bg-white dark:bg-slate-800 rounded-2xl p-6 text-center shadow-sm">
+                <div class="text-3xl font-bold text-primary dark:text-primary-dark mb-2">1,200+</div>
+                <div class="text-gray-600 dark:text-gray-300">رانندگان فعال</div>
+            </div>
+            <div class="stats-card bg-white dark:bg-slate-800 rounded-2xl p-6 text-center shadow-sm">
+                <div class="text-3xl font-bold text-primary dark:text-primary-dark mb-2">5 شهر</div>
+                <div class="text-gray-600 dark:text-gray-300">شهرهای تحت پوشش</div>
+            </div>
+            <div class="stats-card bg-white dark:bg-slate-800 rounded-2xl p-6 text-center shadow-sm">
+                <div class="text-3xl font-bold text-primary dark:text-primary-dark mb-2">85%</div>
+                <div class="text-gray-600 dark:text-gray-300">رضایت رانندگان</div>
+            </div>
+            <div class="stats-card bg-white dark:bg-slate-800 rounded-2xl p-6 text-center shadow-sm">
+                <div class="text-3xl font-bold text-primary dark:text-primary-dark mb-2">24/7</div>
+                <div class="text-gray-600 dark:text-gray-300">پشتیبانی</div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Features Section -->
+<section class="py-16">
+    <div class="container mx-auto px-4">
+        <div class="text-center max-w-2xl mx-auto mb-16">
+            <h2 class="text-3xl md:text-4xl font-bold text-slate-800 dark:text-white mb-4">چرا به خانواده سفر
+                بپیوندید؟</h2>
+            <p class="text-gray-600 dark:text-gray-300">امکانات ویژه برای رانندگان تاکسی در افغانستان</p>
+        </div>
+
+        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <div class="driver-card bg-white dark:bg-slate-800 rounded-2xl p-8 shadow-md border border-gray-100 dark:border-slate-700 transition">
+                <div class="w-14 h-14 rounded-lg bg-primary/10 dark:bg-primary-dark/10 text-primary dark:text-primary-dark flex items-center justify-center mb-6">
+                    <i class="fas fa-money-bill-wave text-2xl"></i>
+                </div>
+                <h3 class="text-xl font-bold mb-3">درآمد بیشتر</h3>
+                <p class="text-gray-600 dark:text-gray-300">
+                    با نرخ‌های رقابتی و پورسانت پایین، درآمد خود را تا 30% افزایش دهید.
+                </p>
+            </div>
+
+            <div class="driver-card bg-white dark:bg-slate-800 rounded-2xl p-8 shadow-md border border-gray-100 dark:border-slate-700 transition">
+                <div class="w-14 h-14 rounded-lg bg-primary/10 dark:bg-primary-dark/10 text-primary dark:text-primary-dark flex items-center justify-center mb-6">
+                    <i class="fas fa-shield-alt text-2xl"></i>
+                </div>
+                <h3 class="text-xl font-bold mb-3">تضمین امنیت</h3>
+                <p class="text-gray-600 dark:text-gray-300">
+                    سیستم ردیابی و پشتیبانی 24 ساعته برای ایمنی شما در تمام سفرها.
+                </p>
+            </div>
+
+            <div class="driver-card bg-white dark:bg-slate-800 rounded-2xl p-8 shadow-md border border-gray-100 dark:border-slate-700 transition">
+                <div class="w-14 h-14 rounded-lg bg-primary/10 dark:bg-primary-dark/10 text-primary dark:text-primary-dark flex items-center justify-center mb-6">
+                    <i class="fas fa-clock text-2xl"></i>
+                </div>
+                <h3 class="text-xl font-bold mb-3">ساعت کاری انعطاف‌پذیر</h3>
+                <p class="text-gray-600 dark:text-gray-300">
+                    هر زمان که بخواهید کار کنید و درآمد کسب کنید. بدون محدودیت زمانی.
+                </p>
+            </div>
+
+            <div class="driver-card bg-white dark:bg-slate-800 rounded-2xl p-8 shadow-md border border-gray-100 dark:border-slate-700 transition">
+                <div class="w-14 h-14 rounded-lg bg-primary/10 dark:bg-primary-dark/10 text-primary dark:text-primary-dark flex items-center justify-center mb-6">
+                    <i class="fas fa-tachometer-alt text-2xl"></i>
+                </div>
+                <h3 class="text-xl font-bold mb-3">پرداخت سریع</h3>
+                <p class="text-gray-600 dark:text-gray-300">
+                    دریافت روزانه درآمد با روش‌های مختلف (حواله بانکی، کیف پول الکترونیکی).
+                </p>
+            </div>
+
+            <div class="driver-card bg-white dark:bg-slate-800 rounded-2xl p-8 shadow-md border border-gray-100 dark:border-slate-700 transition">
+                <div class="w-14 h-14 rounded-lg bg-primary/10 dark:bg-primary-dark/10 text-primary dark:text-primary-dark flex items-center justify-center mb-6">
+                    <i class="fas fa-chart-line text-2xl"></i>
+                </div>
+                <h3 class="text-xl font-bold mb-3">پاداش و طرح‌های تشویقی</h3>
+                <p class="text-gray-600 dark:text-gray-300">
+                    دریافت پاداش‌های نقدی و غیرنقدی در برنامه‌های تشویقی هفتگی و ماهانه.
+                </p>
+            </div>
+
+            <div class="driver-card bg-white dark:bg-slate-800 rounded-2xl p-8 shadow-md border border-gray-100 dark:border-slate-700 transition">
+                <div class="w-14 h-14 rounded-lg bg-primary/10 dark:bg-primary-dark/10 text-primary dark:text-primary-dark flex items-center justify-center mb-6">
+                    <i class="fas fa-headset text-2xl"></i>
+                </div>
+                <h3 class="text-xl font-bold mb-3">پشتیبانی اختصاصی</h3>
+                <p class="text-gray-600 dark:text-gray-300">
+                    تیم پشتیبانی اختصاصی رانندگان برای حل سریع مشکلات و پاسخگویی به سوالات.
+                </p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Slider Section -->
+<section class="py-16 bg-slate-50 dark:bg-slate-800/50">
+    <div class="container mx-auto px-4">
+        <div class="text-center max-w-2xl mx-auto mb-16">
+            <h2 class="text-3xl md:text-4xl font-bold text-slate-800 dark:text-white mb-4">تجربه رانندگان سفر</h2>
+            <p class="text-gray-600 dark:text-gray-300">نظر همکاران شما در مورد کار با سفر</p>
+        </div>
+
+        <div class="max-w-4xl mx-auto">
+            <div class="relative overflow-hidden rounded-2xl shadow-lg">
+                <div id="slider" class="flex transition-transform duration-500 ease-in-out">
+                    <div class="slide min-w-full flex-shrink-0">
+                        <div class="bg-white dark:bg-slate-800 p-8 md:p-12">
+                            <div class="flex flex-col md:flex-row items-center">
+                                <img src="https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?auto=format&fit=crop&q=80&w=800"
+                                     alt="Driver"
+                                     class="w-24 h-24 rounded-full object-cover border-4 border-primary/20 dark:border-primary-dark/20 mb-6 md:mb-0 md:mr-8">
+                                <div>
+                                    <div class="flex items-center mb-4">
+                                        <h3 class="text-xl font-bold">احمد شاه</h3>
+                                        <div class="flex ml-4 text-amber-400">
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                        </div>
+                                    </div>
+                                    <p class="text-gray-600 dark:text-gray-300 mb-4 italic">
+                                        "بیش از 6 ماه است که با سفر کار می‌کنم. درآمدم نسبت به قبل 40% افزایش یافته و
+                                        پشتیبانی همیشه پاسخگوی مشکلاتم بوده. بهترین تصمیم حرفه‌ای من بود!"
+                                    </p>
+                                    <p class="text-gray-500 dark:text-gray-400">راننده در کابل - 8 ماه سابقه</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="slide min-w-full flex-shrink-0">
+                        <div class="bg-white dark:bg-slate-800 p-8 md:p-12">
+                            <div class="flex flex-col md:flex-row items-center">
+                                <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&q=80&w=800"
+                                     alt="Driver"
+                                     class="w-24 h-24 rounded-full object-cover border-4 border-primary/20 dark:border-primary-dark/20 mb-6 md:mb-0 md:mr-8">
+                                <div>
+                                    <div class="flex items-center mb-4">
+                                        <h3 class="text-xl font-bold">محمد کاظم</h3>
+                                        <div class="flex ml-4 text-amber-400">
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star-half-alt"></i>
+                                        </div>
+                                    </div>
+                                    <p class="text-gray-600 dark:text-gray-300 mb-4 italic">
+                                        "انعطاف ساعات کاری بزرگترین مزیت سفر برای من است. می‌توانم صبح‌ها فرزندانم را به
+                                        مدرسه ببرم و بعد کار کنم. پرداخت‌ها همیشه به موقع انجام می‌شود."
+                                    </p>
+                                    <p class="text-gray-500 dark:text-gray-400">راننده در هرات - 5 ماه سابقه</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="slide min-w-full flex-shrink-0">
+                        <div class="bg-white dark:bg-slate-800 p-8 md:p-12">
+                            <div class="flex flex-col md:flex-row items-center">
+                                <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?auto=format&fit=crop&q=80&w=800"
+                                     alt="Driver"
+                                     class="w-24 h-24 rounded-full object-cover border-4 border-primary/20 dark:border-primary-dark/20 mb-6 md:mb-0 md:mr-8">
+                                <div>
+                                    <div class="flex items-center mb-4">
+                                        <h3 class="text-xl font-bold">عبدالرحمان</h3>
+                                        <div class="flex ml-4 text-amber-400">
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                        </div>
+                                    </div>
+                                    <p class="text-gray-600 dark:text-gray-300 mb-4 italic">
+                                        "سیستم امنیتی سفر واقعا عالی است. با دکته اضطراری روی برنامه احساس امنیت می‌کنم.
+                                        پاداش‌های هفتگی هم انگیزه بیشتری برای کار کردن به من می‌دهد."
+                                    </p>
+                                    <p class="text-gray-500 dark:text-gray-400">راننده در مزارشریف - 3 ماه سابقه</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="absolute top-1/2 left-4 transform -translate-y-1/2">
+                    <button id="prev"
+                            class="bg-white/80 dark:bg-slate-700/80 hover:bg-white dark:hover:bg-slate-600 text-slate-800 dark:text-white rounded-full w-10 h-10 flex items-center justify-center shadow-lg">
+                        <i class="fas fa-chevron-right"></i>
+                    </button>
+                </div>
+                <div class="absolute top-1/2 right-4 transform -translate-y-1/2">
+                    <button id="next"
+                            class="bg-white/80 dark:bg-slate-700/80 hover:bg-white dark:hover:bg-slate-600 text-slate-800 dark:text-white rounded-full w-10 h-10 flex items-center justify-center shadow-lg">
+                        <i class="fas fa-chevron-left"></i>
+                    </button>
+                </div>
+
+                <div class="absolute bottom-4 left-1/2 transform -translate-x-1/2 flex space-x-2">
+                    <button class="slider-dot w-3 h-3 rounded-full bg-gray-300 dark:bg-slate-600"></button>
+                    <button class="slider-dot w-3 h-3 rounded-full bg-gray-300 dark:bg-slate-600"></button>
+                    <button class="slider-dot w-3 h-3 rounded-full bg-gray-300 dark:bg-slate-600"></button>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- CTA Section -->
+<section class="py-16">
+    <div class="container mx-auto px-4">
+        <div class="bg-gradient-to-r from-primary to-teal-400 dark:from-primary-dark dark:to-emerald-600 rounded-3xl p-12 text-center">
+            <h2 class="text-3xl md:text-4xl font-bold text-white mb-4">همین امروز به خانواده سفر بپیوندید!</h2>
+            <p class="text-white/90 max-w-2xl mx-auto mb-8">
+                ثبت نام فقط 5 دقیقه زمان می‌برد و پس از تایید مدارک، می‌توانید بلافاصله شروع به کار کنید.
+            </p>
+            <button class="bg-white text-primary dark:text-primary-dark font-bold py-3 px-8 rounded-full text-lg hover:bg-gray-100 transition">
+                ثبت نام راننده
+                <i class="fas fa-arrow-left mr-2"></i>
+            </button>
+        </div>
+    </div>
+</section>
+
+<!-- Footer -->
+<footer class="bg-slate-800 text-gray-300 pt-16 pb-8">
+    <div class="container mx-auto px-4">
+        <div class="grid grid-cols-1 md:grid-cols-4 gap-8 mb-12">
+            <div>
+                <div class="flex items-center space-x-2 mb-6">
+                    <div class="bg-primary w-10 h-10 rounded-lg flex items-center justify-center">
+                        <i class="fas fa-car text-white text-xl"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold text-white">سفر</h3>
+                </div>
+                <p class="mb-6">
+                    اولین و بهترین سامانه درخواست آنلاین تاکسی در افغانستان، با تمرکز بر رفاه و درآمد رانندگان
+                </p>
+                <div class="flex space-x-4">
+                    <a href="#"
+                       class="w-10 h-10 rounded-full bg-slate-700 hover:bg-slate-600 flex items-center justify-center">
+                        <i class="fab fa-facebook-f"></i>
+                    </a>
+                    <a href="#"
+                       class="w-10 h-10 rounded-full bg-slate-700 hover:bg-slate-600 flex items-center justify-center">
+                        <i class="fab fa-instagram"></i>
+                    </a>
+                    <a href="#"
+                       class="w-10 h-10 rounded-full bg-slate-700 hover:bg-slate-600 flex items-center justify-center">
+                        <i class="fab fa-whatsapp"></i>
+                    </a>
+                </div>
+            </div>
+
+            <div>
+                <h4 class="text-lg font-bold text-white mb-6">لینک‌های مفید</h4>
+                <ul class="space-y-3">
+                    <li><a href="#" class="hover:text-primary dark:hover:text-primary-dark transition">شرایط و
+                        قوانین</a></li>
+                    <li><a href="#" class="hover:text-primary dark:hover:text-primary-dark transition">حریم خصوصی</a>
+                    </li>
+                    <li><a href="#" class="hover:text-primary dark:hover:text-primary-dark transition">سوالات متداول</a>
+                    </li>
+                    <li><a href="#" class="hover:text-primary dark:hover:text-primary-dark transition">ثبت نام
+                        راننده</a></li>
+                    <li><a href="#" class="hover:text-primary dark:hover:text-primary-dark transition">تماس با
+                        پشتیبانی</a></li>
+                </ul>
+            </div>
+
+            <div>
+                <h4 class="text-lg font-bold text-white mb-6">شهرهای تحت پوشش</h4>
+                <ul class="space-y-3">
+                    <li>کابل</li>
+                    <li>هرات</li>
+                    <li>مزارشریف</li>
+                    <li>کندهار</li>
+                    <li>جلال آباد</li>
+                </ul>
+            </div>
+
+            <div>
+                <h4 class="text-lg font-bold text-white mb-6">دانلود اپلیکیشن</h4>
+                <div class="space-y-4">
+                    <button class="w-full bg-slate-700 hover:bg-slate-600 rounded-lg py-3 px-4 flex items-center">
+                        <i class="fab fa-google-play text-2xl mr-3"></i>
+                        <div class="text-left">
+                            <div class="text-xs">دانلود از</div>
+                            <div class="font-medium">Google Play</div>
+                        </div>
+                    </button>
+                    <button class="w-full bg-slate-700 hover:bg-slate-600 rounded-lg py-3 px-4 flex items-center">
+                        <i class="fab fa-apple text-2xl mr-3"></i>
+                        <div class="text-left">
+                            <div class="text-xs">دانلود از</div>
+                            <div class="font-medium">App Store</div>
+                        </div>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <div class="pt-8 border-t border-slate-700 text-center text-sm">
+            <p>© 2025 سفر - تمام حقوق محفوظ است. طراحی شده با ❤️ در افغانستان</p>
+        </div>
+    </div>
+</footer>
+
+<script src="./src/js/main.js"></script>
+<script src="./src/js/darkMode.js" defer></script>
+<script src="./src/js/taliwind.js"></script>
+</body>
+</html>

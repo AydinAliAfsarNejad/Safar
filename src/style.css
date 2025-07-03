@@ -1,0 +1,63 @@
+@import url("https://fonts.googleapis.com/css2?family=Noto+Nastaliq+Urdu&family=Rubik:wght@300;400;500;600;700&display=swap");
+@import "tailwindcss";
+
+
+
+
+@theme {
+  --color-primary: #07EBB6;
+  --color-primary-dark :;
+}
+
+
+body {
+  font-family: "Rubik", "Noto Nastaliq Urdu", sans-serif;
+  direction: rtl;
+}
+
+.hero-pattern {
+  background: radial-gradient(
+    circle,
+    rgba(7, 235, 182, 0.15) 0%,
+    rgba(255, 255, 255, 0) 70%
+  );
+}
+
+.dark .hero-pattern {
+  background: radial-gradient(
+    circle,
+    rgba(16, 185, 129, 0.15) 0%,
+    rgba(15, 23, 42, 0) 70%
+  );
+}
+
+.slide {
+  transition: transform 0.5s ease, opacity 0.5s ease;
+}
+
+.driver-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1),
+    0 10px 10px -5px rgba(0, 0, 0, 0.04);
+}
+
+.stats-card {
+  transition: all 0.3s ease;
+}
+
+.stats-card:hover {
+  transform: scale(1.03);
+}
+
+.slider-dot {
+  transition: all 0.3s ease;
+}
+
+.slider-dot.active {
+  width: 24px;
+  background-color: #07ebb6;
+}
+
+.dark .slider-dot.active {
+  background-color: #10b981;
+}
