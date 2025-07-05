@@ -1,12 +1,13 @@
-
-
-
 // Slider functionality
-const slider = document.getElementById("slider");
-const slides = document.querySelectorAll(".slide");
-const dots = document.querySelectorAll(".slider-dot");
-const prevBtn = document.getElementById("prev");
-const nextBtn = document.getElementById("next");
+const $ = document
+const slider = $.getElementById("slider");
+const slides = $.querySelectorAll(".slide");
+const dots = $.querySelectorAll(".slider-dot");
+const prevBtn = $.getElementById("prev");
+const nextBtn = $.getElementById("next");
+const openMobileMenu = $.getElementById("open-mobile-menu");
+const mobileMenu = $.getElementById("mobile-menu");
+const closeMobileMenu = $.getElementById("close-btn");
 
 let currentIndex = 0;
 
@@ -49,3 +50,54 @@ dots.forEach((dot, index) => {
 
 // Initialize slider
 updateSlider();
+
+// Mobile menu functionality
+function openMenu() {
+  mobileMenu.classList.remove("-right-64");
+  mobileMenu.classList.add("right-0");
+  
+  // Add backdrop overlay
+  const backdrop = document.createElement('div');
+  backdrop.id = 'mobile-menu-backdrop';
+  backdrop.className = 'fixed inset-0 bg-black/50 z-10';
+  document.body.appendChild(backdrop);
+  
+  // Prevent body scroll
+  document.body.style.overflow = 'hidden';
+}
+
+function closeMenu() {
+  mobileMenu.classList.remove("right-0");
+  mobileMenu.classList.add("-right-64");
+  
+  // Remove backdrop overlay
+  const backdrop = document.getElementById('mobile-menu-backdrop');
+  if (backdrop) {
+    backdrop.remove();
+  }
+  
+  // Restore body scroll
+  document.body.style.overflow = '';
+}
+
+openMobileMenu.addEventListener("click", openMenu);
+
+closeMobileMenu.addEventListener("click", closeMenu);
+
+// Close menu when clicking on backdrop
+document.addEventListener('click', (e) => {
+  const backdrop = document.getElementById('mobile-menu-backdrop');
+  if (e.target === backdrop) {
+    closeMenu();
+  }
+});
+
+// Close menu on escape key
+document.addEventListener('keydown', (e) => {
+  if (e.key === 'Escape') {
+    const backdrop = document.getElementById('mobile-menu-backdrop');
+    if (backdrop) {
+      closeMenu();
+    }
+  }
+});
